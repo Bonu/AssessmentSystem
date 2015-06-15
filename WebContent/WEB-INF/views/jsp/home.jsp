@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome to the Assessment Management System</title>
 </head>
 <body>
-
+	<H2>Welcome to the Assessment Management System</H2>
 </body>
 </html>
