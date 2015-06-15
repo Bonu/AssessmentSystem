@@ -17,7 +17,7 @@ public class BaseController {
 
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String login(Model model){
-		return "login";
+		return "home";
 	}
 	
 	

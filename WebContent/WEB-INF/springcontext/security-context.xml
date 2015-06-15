@@ -23,17 +23,17 @@
 	<!-- Implemented with Web based URL - Controller "METHOD" level authorization -->
 	<!-- the more specific rules need to come first, followed by the more general ones. -->
 	<!-- COMmENT out the following to see @Service METHOD level authorization -->
-	  <security:intercept-url pattern="/products/add" access="hasRole('ROLE_ADMIN')" />  	
-	  <security:intercept-url pattern="/products" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  />
+	<!--  <security:intercept-url pattern="/products/add" access="hasRole('ROLE_ADMIN')" />  --> 	
+	  <security:intercept-url pattern="/*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  />
  	
 		<!-- always-use-default-target overrides where login was triggered -->
 		<!-- logout-url renames j_security_logout URL -->
 
 <!-- Comment out login-page through logoinfailed for BASIC -->
 		<security:form-login login-page="/login" 
-               default-target-url="/welcome"    
+               default-target-url="/home"    
                always-use-default-target="false"   
-               authentication-failure-url="/loginfailed"/>
+               authentication-failure-url="/login"/>
         <security:logout logout-success-url="/logout"  logout-url= "/doLogout"/>
         
 		<!-- BY DEFAULT the URL /j_spring_security_logout triggers logout 
