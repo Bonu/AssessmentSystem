@@ -17,7 +17,7 @@
 	
 	<div class="form-group">
 					<div class="col-lg-10">
-						${assessment.nameAssessment}
+<%-- 						${assessment.nameAssessment} --%>
 					
 					</div>
 				</div>
