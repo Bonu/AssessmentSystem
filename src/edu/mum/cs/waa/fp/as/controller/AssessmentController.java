@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -34,12 +35,12 @@ public class AssessmentController {
 	@RequestMapping(value = { "/", "/listAssessments" }, method = RequestMethod.GET)
 	public String assessmentHomepage(Model model) {
 
-		List<Assessment> ass = assessmentService.findAll();
-		for(Assessment a: ass){
+		List<Assessment> assessment = assessmentService.findAll();
+		for(Assessment a: assessment){
 			System.out.println(a.getNameAssessment());
 			System.out.println(a.getDescriptionAssessment());
 		}
-		model.addAttribute("assessment", ass);
+		model.addAttribute("assessment", assessment);
 
 		return "assessmentHomepage";
 	}
@@ -72,6 +73,14 @@ public class AssessmentController {
 		assessmentService.save(assessment);
 		System.out.println("after save");
 		return "redirect:listAssessments";
+	}
+	
+	@RequestMapping(value="/assessmentDelete/{id}", method=RequestMethod.GET)
+	public String deleteAssessment(@PathVariable("id") Long id, Model model){
+		
+		/*assessmentService.d*/
+		
+		return "";
 	}
 
 }

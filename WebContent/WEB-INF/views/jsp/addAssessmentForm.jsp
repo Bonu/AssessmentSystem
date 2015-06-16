@@ -10,12 +10,22 @@
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>Add Assessment</title>
+<style type="text/css">
+.wrapper{
+margin:0px auto;
+width:500px;
+padding:10px;
+border: 1px solid;
+margin-top: 50px;
+
+}
+</style>
 </head>
 <body>
 	<h3>Add Your Assessment Here</h3>
 
 
-
+<div class="wrapper">
 	<form:form modelAttribute="assessment" cssClass="form-horizontal"
 		 method="post">
 		<fieldset>
@@ -45,14 +55,15 @@
 			</div>
 
 
-			<div class="form-group">
+			<div align="right">
 
-				<input type="submit" id="btnAdd" class="btn btn-primary" value="Add" />
+				<input type="submit" id="btnAdd" class="btn btn-primary" value="Save" />
 
 			</div>
 
 		</fieldset>
 	</form:form>
+	</div>
 
 </body>
 </html>
