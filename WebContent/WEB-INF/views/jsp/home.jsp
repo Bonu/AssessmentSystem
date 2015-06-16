@@ -23,5 +23,12 @@
 </div>
 	<H2>Welcome to the Assessment Management System</H2>
 	
+	<!-- Show assessments with result + assessments open -> show assess -->
+	<a href="#">Student-Assessment</a>
+	
+	<a href="#">Professor-Create Assessment</a>
+	<a href="#">Professor-Manage Existing Assessment(open/close/delete)</a>
+	<a href="#">Professor-</a>
+	
 </body>
 </html>
