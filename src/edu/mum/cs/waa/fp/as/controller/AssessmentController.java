@@ -78,9 +78,9 @@ public class AssessmentController {
 	@RequestMapping(value="/assessmentDelete/{id}", method=RequestMethod.GET)
 	public String deleteAssessment(@PathVariable("id") Long id, Model model){
 		
-		/*assessmentService.d*/
+		assessmentService.delete(id);
 		
-		return "";
+		return "/";
 	}
 
 }

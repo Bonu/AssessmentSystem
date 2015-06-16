@@ -31,4 +31,12 @@ class AssessmentServiceImpl implements AssessmentService {
 
 	}
 
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+		assessmentRepository.delete(id);
+		
+	}
+
 }
