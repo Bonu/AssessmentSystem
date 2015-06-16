@@ -30,7 +30,7 @@ public class User {
 	private String firstName;
 	@Column
 	@NotNull
-	@Size(min = 3)
+	@Size(min = 1)
 	private String lastName;
 	@NotNull
 	@Size(min = 6)
