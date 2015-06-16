@@ -1,5 +1,7 @@
 package edu.mum.cs.waa.fp.as.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +27,19 @@ public class AssessmentController {
 	@Autowired
 	AssessmentService assessmentService;
 
-	
 	/**
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = { "/", "/listAssessments/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/listAssessments" }, method = RequestMethod.GET)
 	public String assessmentHomepage(Model model) {
 
-		model.addAttribute("assessment", assessmentService.findAll());
+		List<Assessment> ass = assessmentService.findAll();
+		for(Assessment a: ass){
+			System.out.println(a.getNameAssessment());
+			System.out.println(a.getDescriptionAssessment());
+		}
+		model.addAttribute("assessment", ass);
 
 		return "assessmentHomepage";
 	}
@@ -41,8 +47,8 @@ public class AssessmentController {
 	/**
 	 * @return
 	 */
-	@RequestMapping(value = "/addAssessmentForm/", method=RequestMethod.GET)
-	public String addAssessmentForm() {
+	@RequestMapping(value = "/addAssessmentForm", method = RequestMethod.GET)
+	public String addAssessmentForm(@ModelAttribute Assessment assessment) {
 
 		return "addAssessmentForm";
 	}
@@ -53,7 +59,7 @@ public class AssessmentController {
 	 * @param redirectAttributes
 	 * @return
 	 */
-	@RequestMapping(value = "/add", method=RequestMethod.POST)
+	@RequestMapping(value = "/addAssessmentForm", method = RequestMethod.POST)
 	public String addAssessment(@Valid @ModelAttribute Assessment assessment,
 			BindingResult result, RedirectAttributes redirectAttributes) {
 
@@ -62,11 +68,10 @@ public class AssessmentController {
 
 			return "addAssessmentForm";
 		}
+		System.out.println("no error");
 		assessmentService.save(assessment);
-//		System.out.println("Inside Add Handler2");
-//		redirectAttributes.addFlashAttribute(assessment);
-//		System.out.println("Inside Add Handler3");
-		return "redirect:/createAssessment/listAssessments/";
+		System.out.println("after save");
+		return "redirect:listAssessments";
 	}
 
 }

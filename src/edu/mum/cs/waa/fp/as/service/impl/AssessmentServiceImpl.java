@@ -13,7 +13,7 @@ import edu.mum.cs.waa.fp.as.service.AssessmentService;
 
 @Service
 @Transactional
-public class AssessmentServiceImpl implements AssessmentService {
+class AssessmentServiceImpl implements AssessmentService {
 
 	@Autowired
 	AssessmentRepository assessmentRepository;
