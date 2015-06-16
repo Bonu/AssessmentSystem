@@ -1,20 +1,26 @@
 package edu.mum.cs.waa.fp.as.domain;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity
+@Entity(name = "User")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "Use")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "UserId")
 	private int userId;
-	@Column(name = "USERNAME", nullable = false, unique = true)
+	@Column(name = "UserName", nullable = false, unique = true)
 	@NotNull
 	@Size(min = 3)
 	private String userName;
@@ -26,10 +32,17 @@ public class User {
 	@NotNull
 	@Size(min = 3)
 	private String lastName;
-	@Column
 	@NotNull
 	@Size(min = 6)
+	@Column(name = "Password", nullable = false, unique = false)
 	private String password;
+	
+	@ManyToMany
+	@JoinTable (name="User_Role",
+	joinColumns={ @JoinColumn(name="UserId")},
+	inverseJoinColumns={ @JoinColumn(name="RoleId" ) } )
+	private Set<Role> roles;
+
 	public String getVerifyPassword() {
 		return verifyPassword;
 	}
