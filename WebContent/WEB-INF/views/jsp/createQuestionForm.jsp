@@ -12,9 +12,10 @@
 <form:form modelAttribute="question" method="GET">
 	<fieldset>
 			<legend>Add Question</legend>
+			<form:label path="description">Question</form:label>
 			<form:input path="description"/>
 			<form:errors path="description"/>
-			
+						
 	</fieldset>
 </form:form>
 </body>
