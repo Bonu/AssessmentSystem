@@ -25,7 +25,7 @@
 
 				<form:errors path="*" cssClass="alert alert-danger" element="div" />
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="memberNumber">User
+					<label class="control-label col-lg-2 col-lg-2" for="userName">User
 						Name</label>
 					<div class="col-lg-10">
 						<form:input id="userName" path="userName" type="text"
@@ -54,12 +54,6 @@
 					</div>
 				</div>
 
-
-
-
-
-
-
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="password">Password</label>
 					<div class="col-lg-10">
@@ -82,11 +76,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
-
 
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
