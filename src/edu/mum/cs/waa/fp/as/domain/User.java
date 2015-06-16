@@ -36,12 +36,23 @@ public class User {
 	@Size(min = 6)
 	@Column(name = "Password", nullable = false, unique = false)
 	private String password;
-	
-	@ManyToMany
-	@JoinTable (name="User_Role",
-	joinColumns={ @JoinColumn(name="UserId")},
-	inverseJoinColumns={ @JoinColumn(name="RoleId" ) } )
-	private Set<Role> roles;
+
+	/*
+	 * @ManyToMany
+	 * 
+	 * @JoinTable (name="User_Role", joinColumns={ @JoinColumn(name="UserId")},
+	 * inverseJoinColumns={ @JoinColumn(name="RoleId" ) } ) private Set<Role>
+	 * roles;
+	 */
+	private String role;
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public String getVerifyPassword() {
 		return verifyPassword;
