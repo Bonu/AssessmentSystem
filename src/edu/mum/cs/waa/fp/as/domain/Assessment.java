@@ -2,10 +2,15 @@ package edu.mum.cs.waa.fp.as.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,14 +21,14 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author Bharat
  *
  */
-@Entity
+@Entity(name="ASSESSMENT")
 public class Assessment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ASSESSMENT_ID")
+	@Column(name="ASSESSMENTID")
 	private Long id;
 
 	@NotEmpty
@@ -32,6 +37,13 @@ public class Assessment implements Serializable {
 	private String descriptionAssessment;
 
 	private Date date;
+	
+	@Valid
+	@OneToMany
+	@JoinTable(name="ASSESSMENT_QUESTION",
+			joinColumns={@JoinColumn(name="ASSESSMENTID")},
+	inverseJoinColumns={@JoinColumn(name="QUESTIONID", unique=true)})
+	public List<Question> question;
 	
 	public Date getDate() {
 		return date;

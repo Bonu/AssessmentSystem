@@ -13,4 +13,6 @@ public interface AssessmentService {
 
 	public void save(Assessment assessment);
 
+	public void delete(Long id);
+	
 }

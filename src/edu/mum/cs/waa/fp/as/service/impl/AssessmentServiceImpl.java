@@ -13,7 +13,7 @@ import edu.mum.cs.waa.fp.as.service.AssessmentService;
 
 @Service
 @Transactional
-public class AssessmentServiceImpl implements AssessmentService {
+class AssessmentServiceImpl implements AssessmentService {
 
 	@Autowired
 	AssessmentRepository assessmentRepository;
@@ -29,6 +29,14 @@ public class AssessmentServiceImpl implements AssessmentService {
 		// TODO Auto-generated method stub
 		assessmentRepository.save(assessment);
 
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+		assessmentRepository.delete(id);
+		
 	}
 
 }
