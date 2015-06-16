@@ -83,10 +83,29 @@ public class AssessmentController {
 	@RequestMapping(value = "/assessmentDelete/{id}", method = RequestMethod.GET)
 	public String deleteAssessment(@PathVariable("id") Long id) {
 
-		System.out.println("id=" + id);
+		System.out.println("DeleteId=" + id);
 		assessmentService.delete(id);
 
 		return "redirect:/createAssessment/";
 	}
+	
+	@RequestMapping(value = "/assessmentEdit/{id}", method = RequestMethod.GET)
+	public String editAssessment(@PathVariable("id") Long id,Model model, Assessment assessment) {
 
+		System.out.println("EditId=" + id);
+		assessment = assessmentService.findById(id);
+		model.addAttribute("assessment", assessment);
+		//on the jsp page
+		return "addAssessmentForm";
+	}
+	
+	@RequestMapping(value = "/assessmentEdit/{id}", method = RequestMethod.POST)
+	public String editAssessmentSave(@ModelAttribute  Assessment assessment, @PathVariable("id") Long id,Model model) {
+
+		System.out.println("EditId=" + id);
+		assessment.setId(id);
+		this.assessmentService.update(assessment);
+		
+		return "redirect:/createAssessment/";
+	}
 }
