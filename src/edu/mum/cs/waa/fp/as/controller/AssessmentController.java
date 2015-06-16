@@ -36,7 +36,7 @@ public class AssessmentController {
 	public String assessmentHomepage(Model model) {
 
 		List<Assessment> assessment = assessmentService.findAll();
-		for(Assessment a: assessment){
+		for (Assessment a : assessment) {
 			System.out.println(a.getNameAssessment());
 			System.out.println(a.getDescriptionAssessment());
 		}
@@ -74,13 +74,19 @@ public class AssessmentController {
 		System.out.println("after save");
 		return "redirect:listAssessments";
 	}
-	
-	@RequestMapping(value="/assessmentDelete/{id}", method=RequestMethod.GET)
-	public String deleteAssessment(@PathVariable("id") Long id, Model model){
-		
+
+	/**
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/assessmentDelete/{id}", method = RequestMethod.GET)
+	public String deleteAssessment(@PathVariable("id") Long id) {
+
+		System.out.println("id=" + id);
 		assessmentService.delete(id);
-		
-		return "/";
+
+		return "redirect:/createAssessment/";
 	}
 
 }

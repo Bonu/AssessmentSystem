@@ -52,7 +52,7 @@ width:100px;
 					<c:out value="${assessment.nameAssessment}"/>
 				</td>
 				<td><a href="<c:url value="assessmentEdit" />">Edit</a>|
-				<a href="<c:url value="/assessmentDelete/${assessment.id}" />/">Delete</a></td>
+				<a href="<c:url value="assessmentDelete/${assessment.id}" />">Delete</a></td>
 			</tr>
 			</c:forEach>
 			
