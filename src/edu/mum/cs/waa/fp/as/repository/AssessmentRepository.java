@@ -1,4 +1,4 @@
-package edu.mum.cs.waa.fp.as.repository.impl;
+package edu.mum.cs.waa.fp.as.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

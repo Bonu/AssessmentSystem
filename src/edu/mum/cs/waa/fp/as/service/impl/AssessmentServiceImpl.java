@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.cs.waa.fp.as.domain.Assessment;
-import edu.mum.cs.waa.fp.as.repository.impl.AssessmentRepository;
+import edu.mum.cs.waa.fp.as.repository.AssessmentRepository;
 import edu.mum.cs.waa.fp.as.service.AssessmentService;
 
 @Service
