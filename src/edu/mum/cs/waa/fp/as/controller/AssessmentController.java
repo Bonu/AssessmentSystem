@@ -40,10 +40,10 @@ public class AssessmentController {
 		if(assessment.isEmpty()){
 			model.addAttribute("message", "List is Empty. Click Add Assessment");
 		}
-		for (Assessment a : assessment) {
+		/*for (Assessment a : assessment) {
 			System.out.println(a.getNameAssessment());
 			System.out.println(a.getDescriptionAssessment());
-		}
+		}*/
 		model.addAttribute("assessment", assessment);
 
 		return "assessmentHomepage";

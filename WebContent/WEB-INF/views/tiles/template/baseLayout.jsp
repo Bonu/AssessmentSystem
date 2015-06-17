@@ -12,29 +12,30 @@
 
 <title><tiles:insertAttribute name="title" /></title>
 
-<link href="http://getbootstrap.com/dist/css/bootstrap.css"	rel="stylesheet">
+<!-- <link href="http://getbootstrap.com/dist/css/bootstrap.css"
+	rel="stylesheet">
 
-<link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css"	rel="stylesheet">
+<link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css"
+	rel="stylesheet"> -->
 
 </head>
 
 <body>
 
 	<div class="container">
-		<div class="header">
-			<ul class="nav nav-pills pull-right">
+ <div class="header">
+			<%-- <ul class="nav nav-pills pull-right">
 				<tiles:insertAttribute name="navigation" />
-			</ul>
-			<h3 class="text-muted">Web Store</h3>
+			</ul> --%>
+			<h3 class="text-muted">Assessment System</h3>
 		</div>
-
-		<div class="jumbotron">
+		<div >
 			<h1>
 				<tiles:insertAttribute name="heading" />
 			</h1>
-			<p>
+			<%-- <p>
 				<tiles:insertAttribute name="tagline" />
-			</p>
+			</p> --%>
 		</div>
 
 		<div class="row">

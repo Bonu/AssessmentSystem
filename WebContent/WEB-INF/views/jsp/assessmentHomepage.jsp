@@ -13,6 +13,8 @@
 	margin: 0px auto;
 	width: 500px;
 	padding-top: 50px;
+	/*border: 1px solid;*/
+	margin-top: 30px;
 }
 
 table {
@@ -42,7 +44,7 @@ tr:nth-child(odd) {
 		<h3>List of Assessments</h3>
 
 		<div class="form-group">
-			<div class="col-lg-10">
+			<div >
 
 				<div id="message" style="color: red;">
 					<br /> ${message} <br />
