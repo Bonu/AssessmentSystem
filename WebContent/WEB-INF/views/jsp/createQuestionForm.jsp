@@ -9,13 +9,18 @@
 <title>Add Question</title>
 </head>
 <body>
-<form:form modelAttribute="question" method="GET">
+<form:form modelAttribute="question" method="POST">
 	<fieldset>
 			<legend>Add Question</legend>
 			<form:label path="description">Question</form:label>
-			<form:input path="description"/>
-			<form:errors path="description"/>
-						
+			<form:input path="description"/><br/>
+			<form:errors path="description"/><br/>			
+			<form:label path="questionType">Question Type</form:label>
+			<form:select path="questionType" >
+				<form:option value="-">Select</form:option>
+				<form:options items="${questionType}"/>
+			</form:select><br/>
+			<input type="submit" value="Add Question"/>
 	</fieldset>
 </form:form>
 </body>
