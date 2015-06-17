@@ -1,11 +1,12 @@
 package edu.mum.cs.waa.fp.as.validator;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import edu.mum.cs.waa.fp.as.domain.User;
 
-
+@Component
 public class UserValidator implements Validator {
  
 

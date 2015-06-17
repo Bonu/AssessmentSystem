@@ -29,12 +29,14 @@ public class UserController {
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
 	 
-		binder.setValidator(new UserValidator());
+		//binder.setValidator(new UserValidator());
 	}
-
+	@Autowired
+	UserValidator validator;
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String saveUser(@Valid @ModelAttribute("user") User user,
 			BindingResult res, RedirectAttributes red) {
+		validator.validate(user, res);
 		if (res.hasErrors()) {
 			return "register";
 		}
