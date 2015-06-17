@@ -51,7 +51,15 @@
 						<form:errors path="lastName" cssClass="text-danger" />
 					</div>
 				</div>
-
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="role">Last Name</label>
+					<div class="col-lg-10">
+						<form:radiobutton path="role" value="ROLE_ADMIN" />
+						Teacher
+						<form:radiobutton path="role" value="ROLE_USER" checked="checked"/>
+						Student
+					</div>
+				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="password">Password</label>
 					<div class="col-lg-10">
@@ -78,9 +86,9 @@
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Register" /> 
-							<input type="button" id="btnBack"
-							class="btn btn-primary" value="Back" onclick='location.href("./");'/>
+							value="Register" /> <input type="button" id="btnBack"
+							class="btn btn-primary" value="Back"
+							onclick='location.href("./");' />
 					</div>
 				</div>
 
