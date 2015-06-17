@@ -39,7 +39,7 @@ margin-top: 50px;
 				<div class="col-lg-10">
 					<form:input id="nameAssessment" path="nameAssessment" type="text"
 						class="form:input-large" value="${assessment.nameAssessment}"/>
-					<form:errors path="nameAssessment" cssClass="text-danger" />
+					<form:errors path="nameAssessment" cssStyle="color : red;"  />
 				</div>
 			</div>
 
@@ -50,10 +50,19 @@ margin-top: 50px;
 				<div class="col-lg-10">
 					<form:input id="descriptionAssessment" path="descriptionAssessment"
 						type="text" class="form:input-large" value="${assessment.descriptionAssessment}"/>
-					<form:errors path="descriptionAssessment" cssClass="text-danger" />
+					<form:errors path="descriptionAssessment" cssStyle="color : red;"  />
 				</div>
 			</div>
-
+			
+ 			<div class="form-group">
+				<label class="control-label col-lg-2 col-lg-2"
+					for="dateAssessment"> Date </label>
+				<div class="col-lg-10">
+					<form:input id="dateAssessment" path="dateAssessment"
+						type="text" class="form:input-large" value="${assessment.dateAssessment}"/>
+					<form:errors path="dateAssessment" cssStyle="color : red;" />
+				</div>
+			</div> 
 
 			<div align="right">
 

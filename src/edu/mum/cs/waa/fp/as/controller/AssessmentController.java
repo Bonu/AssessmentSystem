@@ -36,6 +36,10 @@ public class AssessmentController {
 	public String assessmentHomepage(Model model) {
 
 		List<Assessment> assessment = assessmentService.findAll();
+		//Send message if the list of assessment is empty.
+		if(assessment.isEmpty()){
+			model.addAttribute("message", "List is Empty. Click Add Assessment");
+		}
 		for (Assessment a : assessment) {
 			System.out.println(a.getNameAssessment());
 			System.out.println(a.getDescriptionAssessment());
@@ -46,6 +50,7 @@ public class AssessmentController {
 	}
 
 	/**
+	 * @param assessment
 	 * @return
 	 */
 	@RequestMapping(value = "/addAssessmentForm", method = RequestMethod.GET)
@@ -77,7 +82,6 @@ public class AssessmentController {
 
 	/**
 	 * @param id
-	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "/assessmentDelete/{id}", method = RequestMethod.GET)
@@ -89,6 +93,12 @@ public class AssessmentController {
 		return "redirect:/createAssessment/";
 	}
 	
+	/**
+	 * @param id
+	 * @param model
+	 * @param assessment
+	 * @return
+	 */
 	@RequestMapping(value = "/assessmentEdit/{id}", method = RequestMethod.GET)
 	public String editAssessment(@PathVariable("id") Long id,Model model, Assessment assessment) {
 
@@ -99,6 +109,12 @@ public class AssessmentController {
 		return "addAssessmentForm";
 	}
 	
+	/**
+	 * @param assessment
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/assessmentEdit/{id}", method = RequestMethod.POST)
 	public String editAssessmentSave(@ModelAttribute  Assessment assessment, @PathVariable("id") Long id,Model model) {
 

@@ -36,7 +36,8 @@ public class Assessment implements Serializable {
 
 	private String descriptionAssessment;
 
-	private Date date;
+	@NotNull(message="dateAssessment")
+	private Date dateAssessment;
 	
 	@Valid
 	@OneToMany
@@ -45,12 +46,22 @@ public class Assessment implements Serializable {
 	inverseJoinColumns={@JoinColumn(name="QUESTIONID", unique=true)})
 	public List<Question> question;
 	
-	public Date getDate() {
-		return date;
+	
+
+	public Date getDateAssessment() {
+		return dateAssessment;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDateAssessment(Date dateAssessment) {
+		this.dateAssessment = dateAssessment;
+	}
+
+	public List<Question> getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(List<Question> question) {
+		this.question = question;
 	}
 
 	public Long getId() {
@@ -77,4 +88,73 @@ public class Assessment implements Serializable {
 		this.descriptionAssessment = descriptionAssessment;
 	}
 
+	@Override
+	public String toString() {
+		return "Assessment [id=" + id + ", nameAssessment=" + nameAssessment
+				+ ", descriptionAssessment=" + descriptionAssessment
+				+ ", dateAssessment=" + dateAssessment + ", question="
+				+ question + ", getDateAssessment()=" + getDateAssessment()
+				+ ", getQuestion()=" + getQuestion() + ", getId()=" + getId()
+				+ ", getNameAssessment()=" + getNameAssessment()
+				+ ", getDescriptionAssessment()=" + getDescriptionAssessment()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((dateAssessment == null) ? 0 : dateAssessment.hashCode());
+		result = prime
+				* result
+				+ ((descriptionAssessment == null) ? 0 : descriptionAssessment
+						.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result
+				+ ((nameAssessment == null) ? 0 : nameAssessment.hashCode());
+		result = prime * result
+				+ ((question == null) ? 0 : question.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Assessment other = (Assessment) obj;
+		if (dateAssessment == null) {
+			if (other.dateAssessment != null)
+				return false;
+		} else if (!dateAssessment.equals(other.dateAssessment))
+			return false;
+		if (descriptionAssessment == null) {
+			if (other.descriptionAssessment != null)
+				return false;
+		} else if (!descriptionAssessment.equals(other.descriptionAssessment))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nameAssessment == null) {
+			if (other.nameAssessment != null)
+				return false;
+		} else if (!nameAssessment.equals(other.nameAssessment))
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		return true;
+	}
+
+	
 }
