@@ -45,6 +45,7 @@ public class User {
 	 * inverseJoinColumns={ @JoinColumn(name="RoleId" ) } ) private Set<Role>
 	 * roles;
 	 */
+	@Column(name = "Role", nullable = false, unique = false)
 	private String role;
 
 	public String getRole() {
@@ -62,7 +63,7 @@ public class User {
 	public void setVerifyPassword(String verifyPassword) {
 		this.verifyPassword = verifyPassword;
 	}
-
+	
 	private String verifyPassword;
 
 	public int getUserId() {

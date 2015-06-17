@@ -40,6 +40,7 @@ public class UserController {
 		if (res.hasErrors()) {
 			return "register";
 		}
+		user.setRole("ROLE_USER");
 		userService.save(user);
 		red.addFlashAttribute("user", user.getUserName());
 		return "redirect:/registersuccessfully";
