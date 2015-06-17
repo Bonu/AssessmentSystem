@@ -88,7 +88,7 @@
 						<input type="submit" id="btnAdd" class="btn btn-primary"
 							value="Register" /> <input type="button" id="btnBack"
 							class="btn btn-primary" value="Back"
-							onclick='location.href("./");' />
+							onclick='location.href="./";' />
 					</div>
 				</div>
 
