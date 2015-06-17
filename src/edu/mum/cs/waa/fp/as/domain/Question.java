@@ -1,5 +1,6 @@
 package edu.mum.cs.waa.fp.as.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,11 +23,47 @@ public class Question {
 	@Column(name = "DESCRIPTION")
 	private String description;
 	
+	@Column(name = "QUESTIONTYPE")
+	private QuestionType questionType;
+	
 	@OneToMany
 	@JoinTable(name="QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )
-	private List<Answer> answers;
+	private List<Answer> answers = new ArrayList<Answer>();
+
+	/**
+	 * @return the answers
+	 */
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+	
+	/**
+	 * @param answers the answers to set
+	 */
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+	
+	
+	public enum QuestionType{
+		MultipleChoice, TrueFalse, MultipleSelect
+	}
+
+	/**
+	 * @return the questionType
+	 */
+	public QuestionType getQuestionType() {
+		return questionType;
+	}
+
+	/**
+	 * @param questionType the questionType to set
+	 */
+	public void setQuestionType(QuestionType questionType) {
+		this.questionType = questionType;
+	}
 
 	/**
 	 * @return the questionId
@@ -43,13 +80,6 @@ public class Question {
 	}
 
 	/**
-	 * @return the answers
-	 */
-	public List<Answer> getAnswers() {
-		return answers;
-	}
-
-	/**
 	 * @param questionId the questionId to set
 	 */
 	public void setQuestionId(int questionId) {
@@ -62,13 +92,5 @@ public class Question {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	/**
-	 * @param answers the answers to set
-	 */
-	public void setAnswers(List<Answer> answers) {
-		this.answers = answers;
-	}
-	
 	
 }
