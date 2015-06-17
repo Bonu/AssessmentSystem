@@ -35,7 +35,7 @@
                default-target-url="/home"    
                always-use-default-target="false"   
                authentication-failure-url="/login"/>
-        <security:logout logout-success-url="/logout"  logout-url= "/doLogout"/>
+        <security:logout logout-success-url="/home"  logout-url= "/logout"/>
         
 		<!-- BY DEFAULT the URL /j_spring_security_logout triggers logout 
 		NOTE: is it JUST a URL naming convention - no mapping is required
