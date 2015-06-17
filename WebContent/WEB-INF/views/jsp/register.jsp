@@ -22,8 +22,6 @@
 		<form:form modelAttribute="user" class="form-horizontal">
 			<fieldset>
 				<legend>Add new member</legend>
-
-				<form:errors path="*" cssClass="alert alert-danger" element="div" />
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="userName">User
 						Name</label>

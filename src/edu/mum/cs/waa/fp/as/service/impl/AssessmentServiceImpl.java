@@ -39,4 +39,19 @@ class AssessmentServiceImpl implements AssessmentService {
 		
 	}
 
+	@Override
+	public Assessment findById(Long id) {
+		// TODO Auto-generated method stub
+		return assessmentRepository.findById(id);
+	}
+
+	@Override
+	public void update(Assessment assessment) {
+		if(this.assessmentRepository.findOne(assessment.getId()) == null){
+			throw new IllegalArgumentException("invalid assessment");
+		}
+		this.assessmentRepository.save(assessment);
+	}
+
+	
 }

@@ -1,6 +1,8 @@
 package edu.mum.cs.waa.fp.as.repository;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import edu.mum.cs.waa.fp.as.domain.Assessment;
@@ -8,4 +10,8 @@ import edu.mum.cs.waa.fp.as.domain.Assessment;
 @Repository
 public interface AssessmentRepository extends CrudRepository<Assessment, Long>{
 
+	
+	public Assessment findById(Long id);
+
+	
 }

@@ -48,11 +48,11 @@ width:100px;
 			<tr>
 				<td>
 <%-- 					<a href="<c:url value="addQuestions" />">Edit</a> --%>
-					<button type="button" onclick=window.location.href='<spring:url value="addQuestions/${assessment.id}"/>'>
+					<button type="button" onclick=window.location.href='<spring:url value="/QuestionAnswer/createQuestion/${assessment.id}"/>'>
 					<c:out value="${assessment.nameAssessment}"/>
 				</td>
-				<td><a href="<c:url value="assessmentEdit" />">Edit</a>|
-				<a href="<c:url value="/assessmentDelete/${assessment.id}" />/">Delete</a></td>
+				<td><a href="<c:url value="assessmentEdit/${assessment.id}" />">Edit</a>|
+				<a href="<c:url value="assessmentDelete/${assessment.id}" />">Delete</a></td>
 			</tr>
 			</c:forEach>
 			

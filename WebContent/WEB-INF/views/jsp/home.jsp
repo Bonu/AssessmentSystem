@@ -15,11 +15,12 @@
 
 <div class="pull-right" style="padding-right:50px">
 	<a href="?language=en">English</a>|
-	<a href="?language=es">Spainsh</a>
+	<a href="?language=es">Spanish</a>
 </div>
 
 <div class="pull-left" style="padding-right:50px">
 	<a href="<spring:url value="/login"/>">Home</a>
+	<spring:message code="home.hello.lable"/>
 </div>
 	<H2>Welcome to the Assessment Management System</H2>
 	

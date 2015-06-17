@@ -38,7 +38,7 @@ margin-top: 50px;
 					Assessment Name</label>
 				<div class="col-lg-10">
 					<form:input id="nameAssessment" path="nameAssessment" type="text"
-						class="form:input-large" />
+						class="form:input-large" value="${assessment.nameAssessment}"/>
 					<form:errors path="nameAssessment" cssClass="text-danger" />
 				</div>
 			</div>
@@ -49,7 +49,7 @@ margin-top: 50px;
 					for="descriptionAssessment"> Assessment Description</label>
 				<div class="col-lg-10">
 					<form:input id="descriptionAssessment" path="descriptionAssessment"
-						type="text" class="form:input-large" />
+						type="text" class="form:input-large" value="${assessment.descriptionAssessment}"/>
 					<form:errors path="descriptionAssessment" cssClass="text-danger" />
 				</div>
 			</div>
