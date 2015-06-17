@@ -12,9 +12,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
  
-
+/**
+ * 
+ * @author Michael
+ * User class holds entity info to be persisted in database
+ */
 @Entity(name = "User")
 public class User {
+	 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "UserId")

@@ -15,12 +15,20 @@ import javax.validation.Valid;
 import edu.mum.cs.waa.fp.as.domain.User;
 import edu.mum.cs.waa.fp.as.service.UserService;
 import edu.mum.cs.waa.fp.as.validator.UserValidator;
-
+/**
+ * 
+ * @author Michael
+ * controller that handles user operations like register
+ */
 @Controller
 public class UserController {
 	@Autowired
 	private UserService userService;
-
+	/**
+	 * leads to the register 
+	 * @param user the model to be used by the view
+	 * @return the view to be displayed
+	 */
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(@ModelAttribute("user") User user) {
 		return "register";

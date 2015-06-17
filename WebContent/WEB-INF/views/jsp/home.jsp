@@ -25,6 +25,7 @@
 		
 		<security:authorize access="isAnonymous()">
 			<a href="<spring:url value='/login' />"> Login</a>
+			<a href="<spring:url value='/register' />">Register</a>
 		</security:authorize>
 
 	</div>
