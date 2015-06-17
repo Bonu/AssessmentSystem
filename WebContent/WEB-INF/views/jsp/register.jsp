@@ -22,8 +22,6 @@
 		<form:form modelAttribute="user" class="form-horizontal">
 			<fieldset>
 				<legend>Add new member</legend>
-
-				<form:errors path="*" cssClass="alert alert-danger" element="div" />
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="userName">User
 						Name</label>
@@ -80,7 +78,9 @@
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Register" />
+							value="Register" /> 
+							<input type="button" id="btnBack"
+							class="btn btn-primary" value="Back" onclick='location.href("./");'/>
 					</div>
 				</div>
 
