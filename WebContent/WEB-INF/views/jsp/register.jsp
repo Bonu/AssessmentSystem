@@ -78,7 +78,9 @@
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Register" />
+							value="Register" /> 
+							<input type="button" id="btnBack"
+							class="btn btn-primary" value="Back" onclick='location.href("./");'/>
 					</div>
 				</div>
 
