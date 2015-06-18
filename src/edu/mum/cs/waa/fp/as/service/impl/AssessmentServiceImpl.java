@@ -3,11 +3,13 @@ package edu.mum.cs.waa.fp.as.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.cs.waa.fp.as.domain.Assessment;
+import edu.mum.cs.waa.fp.as.domain.Question;
 import edu.mum.cs.waa.fp.as.repository.AssessmentRepository;
 import edu.mum.cs.waa.fp.as.service.AssessmentService;
 
@@ -44,6 +46,17 @@ class AssessmentServiceImpl implements AssessmentService {
 		// TODO Auto-generated method stub
 		return assessmentRepository.findById(id);
 	}
+	
+	
+	@Override
+	@Transactional
+	public Assessment findByIdWithQuestion(Long id) {
+		Assessment assessment = assessmentRepository.findOne(id);
+		Question questions = assessment.getQuestions().get(0);
+		System.out.println(questions.getDescription()+"-----------");
+		return assessment;
+	}
+	
 
 	@Override
 	public void update(Assessment assessment) {

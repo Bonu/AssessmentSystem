@@ -1,11 +1,16 @@
 package edu.mum.cs.waa.fp.as.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -40,14 +45,11 @@ public class Assessment implements Serializable {
 	private Date dateAssessment;
 	
 	@Valid
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name="ASSESSMENT_QUESTION",
 			joinColumns={@JoinColumn(name="ASSESSMENTID")},
 	inverseJoinColumns={@JoinColumn(name="QUESTIONID", unique=true)})
-	public List<Question> question;
-	
-	
-
+	public List<Question> question = new ArrayList<Question>();
 	public Date getDateAssessment() {
 		return dateAssessment;
 	}
@@ -86,6 +88,14 @@ public class Assessment implements Serializable {
 
 	public void setDescriptionAssessment(String descriptionAssessment) {
 		this.descriptionAssessment = descriptionAssessment;
+	}
+	
+	public void addQuestion(Question qtn){
+		question.add(qtn);
+	}
+	
+	public List<Question> getQuestions(){
+		return question;
 	}
 
 	@Override

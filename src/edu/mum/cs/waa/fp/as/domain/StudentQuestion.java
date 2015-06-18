@@ -2,8 +2,10 @@ package edu.mum.cs.waa.fp.as.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,13 +24,20 @@ public class StudentQuestion {
 	@Column(name = "DESCRIPTION")
 	private String description;
 	
-	@OneToMany
-	@JoinTable(name="S_QUESTION_ANSWER",
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name="STUDENT_QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )
-	private List<StudentAnswer> studentanswers;
+	private List<StudentAnswer> answers;
 
 	
+	
+	public StudentQuestion(String description, List<StudentAnswer> answers) {
+		super();
+		this.description = description;
+		this.answers = answers;
+	}
+
 	/**
 	 * @return the questionId
 	 */
@@ -43,27 +52,18 @@ public class StudentQuestion {
 		return description;
 	}
 
-	
+	/**
+	 * @return the answers
+	 */
+	public List<StudentAnswer> getAnswers() {
+		return answers;
+	}
+
 	/**
 	 * @param questionId the questionId to set
 	 */
 	public void setQuestionId(int questionId) {
 		this.questionId = questionId;
-	}
-
-	/**
-	 * @return the answers
-	 */
-	
-	public List<StudentAnswer> getStudentanswers() {
-		return studentanswers;
-	}
-
-	/**
-	 * @param answers the answers to set
-	 */
-	public void setStudentanswers(List<StudentAnswer> studentanswers) {
-		this.studentanswers = studentanswers;
 	}
 
 	/**
@@ -73,5 +73,12 @@ public class StudentQuestion {
 		this.description = description;
 	}
 
+	/**
+	 * @param answers the answers to set
+	 */
+	public void setAnswers(List<StudentAnswer> answers) {
+		this.answers = answers;
+	}
+	
 	
 }

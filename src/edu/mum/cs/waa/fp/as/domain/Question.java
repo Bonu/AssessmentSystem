@@ -3,8 +3,10 @@ package edu.mum.cs.waa.fp.as.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,11 +24,12 @@ public class Question {
 	
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
+
 	@Column(name = "QUESTIONTYPE")
 	private QuestionType questionType;
-	
-	@OneToMany
+
+@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
 	@JoinTable(name="QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )

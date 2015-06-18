@@ -34,13 +34,13 @@
 		<spring:message code="home.hello.lable" />
 	</div>
 	<H2>Welcome to the Assessment Management System</H2>
-
-	<!-- Show assessments with result + assessments open -> show assess -->
-	<a href="#">Student-Assessment</a>
-
-	<a href="#">Professor-Create Assessment</a>
-	<a href="#">Professor-Manage Existing Assessment(open/close/delete)</a>
-	<a href="#">Professor-</a>
-
+	<table>
+	<tr><td><a href="#">Student-Assessment</a></td></tr>
+	<tr><td><a href="/AssessmentSystem/showAssessments">Student show Assessments</a></td></tr>
+	<tr><td><a href="/AssessmentSystem/register">Register New User</a></td></tr>
+	<tr><td><a href="#">Professor-Manage Existing Assessment(open/close/delete)</a></td></tr>
+	<tr><td><a href="#">Professor-</a></td></tr>
+	</table>
 </body>
+
 </html>
