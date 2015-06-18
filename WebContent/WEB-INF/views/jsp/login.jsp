@@ -5,18 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
 <title>Products</title>
 </head>
 <body>
-	<section>
+	<!-- <section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Welcome Kimosabe!!</h1>
+				<h1>Welcome !!</h1>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">

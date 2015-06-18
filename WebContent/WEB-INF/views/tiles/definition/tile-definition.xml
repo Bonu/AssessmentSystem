@@ -6,7 +6,7 @@
 
 	<definition name="baseLayout" template="/WEB-INF/views/tiles/template/baseLayout.jsp">
 		<put-attribute name="title" value="Assessment System" />
-		<put-attribute name="heading" value="Assessment System1" />
+		<put-attribute name="heading" value="Assessment System" />
 		<put-attribute name="tagline" value="AssessmentSystem" />
 		<!-- <put-attribute name="navigation"
 			value="/WEB-INF/views/tiles/template/navigation.jsp" /> -->
@@ -16,19 +16,70 @@
 
 	<definition name="assessmentHomepage" extends="baseLayout">
 		<put-attribute name="title" value="Assessment Home" />
-		<put-attribute name="tagline" value="Assessment System" />
-		<put-attribute name="heading" value="Assessment" />
+		<put-attribute name="tagline" value="Assessment Home" />
+		<put-attribute name="heading" value="Assessment Home" />
 		<put-attribute name="content"
 			value="/WEB-INF/views/jsp/assessmentHomepage.jsp" />
 	</definition>
 	
 	<definition name="addAssessmentForm" extends="baseLayout">
 		<put-attribute name="title" value="Add Assessment" />
-		<put-attribute name="heading" value="Assessment Module" />
+		<put-attribute name="heading" value="Add Assessment" />
 		<put-attribute name="content"
 			value="/WEB-INF/views/jsp/addAssessmentForm.jsp" />
 	</definition>
-
+	
+	<definition name="createAnswerForm" extends="baseLayout">
+		<put-attribute name="title" value="Create Answer Form" />
+		<put-attribute name="heading" value="Create Answer Form" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/createAnswerForm.jsp" />
+	</definition>
+	
+	<definition name="createQuestionForm" extends="baseLayout">
+		<put-attribute name="title" value="Create Question Form" />
+		<put-attribute name="heading" value="Create Question Form" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/createQuestionForm.jsp" />
+	</definition>
+	
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="title" value="Home" />
+		 <put-attribute name="heading" value="Home" />
+		  <!--  <put-attribute name="navigation"
+			value="/WEB-INF/views/tiles/template/navigation.jsp" />  -->
+		 <put-attribute name="content"
+			value="/WEB-INF/views/jsp/home.jsp" />
+	</definition>
+	
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="heading" value="Login" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/login.jsp" />
+	</definition>
+	
+	<definition name="register" extends="baseLayout">
+		<put-attribute name="title" value="Register" />
+		<put-attribute name="heading" value="Register" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/register.jsp" />
+	</definition>
+	
+	<definition name="registerSuccessfully" extends="baseLayout">
+		<put-attribute name="title" value="Register Successfully" />
+		<put-attribute name="heading" value="Register Successfully" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/registersuccessfully.jsp" />
+	</definition>
+	
+	<definition name="studentAssessmentList" extends="baseLayout">
+		<put-attribute name="title" value="Student Assessment List" />
+		<put-attribute name="heading" value="Student Assessment List" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/studentAssessmentList.jsp" />
+	</definition>
+	
 	<!-- <definition name="login" extends="baseLayout"> <put-attribute name="title" 
 		value="Login" /> <put-attribute name="heading" value="Login" /> <put-attribute 
 		name="tagline" value="Enter your Credentials" /> <put-attribute name="content" 
