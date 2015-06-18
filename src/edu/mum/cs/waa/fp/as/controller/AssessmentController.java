@@ -17,7 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.mum.cs.waa.fp.as.domain.Assessment;
 import edu.mum.cs.waa.fp.as.service.AssessmentService;
 
-/**
+/**Assessment Controller helps create and list of Assessment.
+ * There is edit , delete and navigation option.
+ * The navigation option navigates the url that generates questions.  
  * @author Bharat
  *
  */
@@ -28,7 +30,11 @@ public class AssessmentController {
 	@Autowired
 	AssessmentService assessmentService;
 
-	/**
+	/**This handler method lists the Assessment Lists from the database.
+	 * Assessments includes Questions and its Answers.
+	 * The JSP page ,assessmentHomepage, returned has a option of adding the assessments.
+	 * The model object sends two things, one is the object and another is the message.
+	 * The message is sent when the list of assessment is empty invoking to add the assessment/
 	 * @param model
 	 * @return
 	 */
@@ -40,16 +46,13 @@ public class AssessmentController {
 		if(assessment.isEmpty()){
 			model.addAttribute("message", "List is Empty. Click Add Assessment");
 		}
-		/*for (Assessment a : assessment) {
-			System.out.println(a.getNameAssessment());
-			System.out.println(a.getDescriptionAssessment());
-		}*/
 		model.addAttribute("assessment", assessment);
 
 		return "assessmentHomepage";
 	}
 
-	/**
+	/**This method gets form for adding assessment.
+	 * The Assessment includes name , description and date field in it. 
 	 * @param assessment
 	 * @return
 	 */
@@ -59,7 +62,10 @@ public class AssessmentController {
 		return "addAssessmentForm";
 	}
 
-	/**
+	/**addAssessment method validates the Assessment fields. 
+	 *  It finally saves the assessment in the database.
+	 *  The page is redirected such that it lists the assignments in the database so far.
+	 *  This actually implements the PRG model.
 	 * @param assessment
 	 * @param result
 	 * @param redirectAttributes
@@ -69,18 +75,17 @@ public class AssessmentController {
 	public String addAssessment(@Valid @ModelAttribute Assessment assessment,
 			BindingResult result, RedirectAttributes redirectAttributes) {
 
-		System.out.println("Inside Add Handler1");
 		if (result.hasErrors()) {
 
 			return "addAssessmentForm";
 		}
-		System.out.println("no error");
 		assessmentService.save(assessment);
-		System.out.println("after save");
+		
 		return "redirect:listAssessments";
 	}
 
-	/**
+	/**The method helps to delete the individual assessment.
+	 * The page is redirected to list the assessments.
 	 * @param id
 	 * @return
 	 */
@@ -93,7 +98,7 @@ public class AssessmentController {
 		return "redirect:/createAssessment/";
 	}
 	
-	/**
+	/**This method gets the existing assessment form the database using id.
 	 * @param id
 	 * @param model
 	 * @param assessment
@@ -109,7 +114,10 @@ public class AssessmentController {
 		return "addAssessmentForm";
 	}
 	
-	/**
+	/**editAssessmentSave method edits the existing assessment.
+	 * The id , whose data is to be over-written, is send to the AssessmentService layer to check if the id 
+	 * exists. If it exists it will over-write in the database in that id.
+	 * Finally it is redirected to the List the Assessment so far , with the edited assessment included.  
 	 * @param assessment
 	 * @param id
 	 * @param model

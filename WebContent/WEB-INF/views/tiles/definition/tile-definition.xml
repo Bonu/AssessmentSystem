@@ -17,6 +17,8 @@
 	<definition name="assessmentHomepage" extends="baseLayout">
 		<put-attribute name="title" value="Assessment Home" />
 		<put-attribute name="tagline" value="Assessment Home" />
+		 <!-- <put-attribute name="navigation"
+			value="/WEB-INF/views/tiles/template/navigation.jsp" /> -->
 		<put-attribute name="heading" value="Assessment Home" />
 		<put-attribute name="content"
 			value="/WEB-INF/views/jsp/assessmentHomepage.jsp" />
@@ -46,8 +48,7 @@
 	<definition name="home" extends="baseLayout">
 		<put-attribute name="title" value="Home" />
 		 <put-attribute name="heading" value="Home" />
-		  <!--  <put-attribute name="navigation"
-			value="/WEB-INF/views/tiles/template/navigation.jsp" />  -->
+		 
 		 <put-attribute name="content"
 			value="/WEB-INF/views/jsp/home.jsp" />
 	</definition>
