@@ -66,5 +66,13 @@ class AssessmentServiceImpl implements AssessmentService {
 		this.assessmentRepository.save(assessment);
 	}
 
+	@Override
+	public Question addQuestion(Long assessmentId, Question question) {
+		Assessment assessment = findById(assessmentId);
+		assessment.addQuestion(question);
+		update(assessment);
+		return question;
+	}
+
 	
 }
