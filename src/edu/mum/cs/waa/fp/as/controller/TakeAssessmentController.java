@@ -21,6 +21,7 @@ import edu.mum.cs.waa.fp.as.domain.StudentAnswer;
 import edu.mum.cs.waa.fp.as.domain.StudentQuestion;
 import edu.mum.cs.waa.fp.as.domain.TakeAssessment;
 import edu.mum.cs.waa.fp.as.service.AssessmentService;
+import edu.mum.cs.waa.fp.as.service.TakeAssessmentService;
 
 /**
  * The TakeAssessmentController does the following tasks
@@ -36,6 +37,9 @@ public class TakeAssessmentController {
 
 	@Autowired
 	AssessmentService assessmentService;
+	
+	@Autowired
+	TakeAssessmentService takeAssessmentService;
 	
 	/**
 	 * Show all the open assessments to the student.
@@ -87,12 +91,14 @@ public class TakeAssessmentController {
 	 * Calculate the assessment result and save the assessment in database
 	 * 
 	 * @param takeAssessment
-	 * @return
+	 * @return assessmentresult view name
 	 */
 	@RequestMapping(value = { "/submitassessment" }, method = RequestMethod.POST)
 	public String submitAssessment(@ModelAttribute TakeAssessment takeAssessment) {
-		// save the assessment
+		// Calculate the result
 		
+		// save the assessment
+		takeAssessmentService.saveTakeAssessment(takeAssessment);
 		return "redirect:/assessmentResult";
 	}
 	
