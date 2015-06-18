@@ -60,13 +60,13 @@ tr:nth-child(odd) {
 							<td><a
 								href="<c:url value="assessmentEdit/${assessment.id}" />">Edit</a>|
 								<a href="<c:url value="assessmentDelete/${assessment.id}" />">Delete</a>
-
 							</td>
-
 						</tr>
 					</c:forEach>
-
 				</table>
+				
+				<button type=button onclick=window.location.href='<spring:url value="/" />'>
+				Home Page</button>
 			</div>
 		</div>
 

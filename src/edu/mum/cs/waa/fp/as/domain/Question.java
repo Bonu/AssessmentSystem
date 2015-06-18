@@ -28,8 +28,7 @@ public class Question {
 	@Column(name = "QUESTIONTYPE")
 	private QuestionType questionType;
 
-@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name="QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )
@@ -40,13 +39,6 @@ public class Question {
 	 */
 	public List<Answer> getAnswers() {
 		return answers;
-	}
-	
-	/**
-	 * @param answers the answers to set
-	 */
-	public void setAnswers(List<Answer> answers) {
-		this.answers = answers;
 	}
 	
 	
@@ -94,6 +86,10 @@ public class Question {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public void addAnswer(Answer answer) {
+		answers.add(answer);		
 	}
 	
 }

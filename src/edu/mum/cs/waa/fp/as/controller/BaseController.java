@@ -9,14 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author 984417
+ * This controller is for home screen display.
+ * 
+ * @author Janardhan Bonu
  *
  */
 @Controller
 public class BaseController {
 
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-	public String login(Model model) {
+	public String goHome(Model model) {
 		return "home";
 	}
 
