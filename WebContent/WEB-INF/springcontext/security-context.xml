@@ -35,17 +35,17 @@
                default-target-url="/home"    
                always-use-default-target="false"   
                authentication-failure-url="/login"/>
-        <security:logout logout-success-url="/logout"  logout-url= "/doLogout"/>
+        <security:logout logout-success-url="/home"  logout-url= "/logout"/>
         
 		<!-- BY DEFAULT the URL /j_spring_security_logout triggers logout 
 		NOTE: is it JUST a URL naming convention - no mapping is required
 				logout-url= "/doLogout" REPLACES it -->
 	</security:http>
 	
-<!-- 
+
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:password-encoder hash="bcrypt" />
+			
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
 				users-by-username-query="select UserName,Password,Enabled from User where username=?"
@@ -53,7 +53,8 @@
 		</security:authentication-provider>
 	</security:authentication-manager>
 
- -->
+ 
+ <!-- 
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
@@ -61,5 +62,5 @@
 				<security:user name="guest" password="guest" authorities="ROLE_USER" />
 			</security:user-service>
 		</security:authentication-provider>
-	</security:authentication-manager>
+	</security:authentication-manager>-->
 </beans>

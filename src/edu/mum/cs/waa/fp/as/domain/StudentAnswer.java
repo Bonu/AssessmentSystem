@@ -13,12 +13,18 @@ public class StudentAnswer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ANSWERID")
 	private int answerId;
-	
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
 	@Column(name = "ISCORRECT")
 	private boolean isCorrect;
+	
+	
+	
+	public StudentAnswer(String description, boolean isCorrect) {
+		super();
+		this.description = description;
+		this.isCorrect = isCorrect;
+	}
 	/**
 	 * @return the answerId
 	 */

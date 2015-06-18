@@ -1,9 +1,11 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ page pageEncoding="UTF-8" %>
-    
-    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+
+<%@ page pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,23 +15,35 @@
 
 <body>
 
-<div class="pull-right" style="padding-right:50px">
-	<a href="?language=en">English</a>|
-	<a href="?language=es">Spanish</a>
-</div>
+	<div class="pull-right" style="padding-right: 50px">
+		<a href="?language=en">English</a>| <a href="?language=es">Spanish</a>
+		<security:authorize access="isAuthenticated()">
+  			Welcome <security:authentication property="principal.username" />
+  			<a href="<spring:url value='/logout' />"> Logout</a>
+		</security:authorize>
+		
+		<security:authorize access="isAnonymous()">
+			<a href="<spring:url value='/login' />"> Login</a>
+			<a href="<spring:url value='/register' />">Register</a>
+		</security:authorize>
 
-<div class="pull-left" style="padding-right:50px">
-	<a href="<spring:url value="/login"/>">Home</a>
-	<spring:message code="home.hello.lable"/>
-</div>
+	</div>
+
+	<div class="pull-left" style="padding-right: 50px">
+		<a href="<spring:url value="/login"/>">Home</a>
+		<spring:message code="home.hello.lable" />
+	</div>
 	<H2>Welcome to the Assessment Management System</H2>
-	
+	<spring:message code="home.hello.lable"/>
 	<!-- Show assessments with result + assessments open -> show assess -->
-	<a href="#">Student-Assessment</a>
-	
-	<a href="#">Professor-Create Assessment</a>
-	<a href="#">Professor-Manage Existing Assessment(open/close/delete)</a>
-	<a href="#">Professor-</a>
-	
+	<table>
+	<tr><td><a href="#">Student-Assessment</a></td></tr>
+	<tr><td><a href="/AssessmentSystem/showAssessments">Student show Assessments</a></td></tr>
+	<tr><td><a href="/AssessmentSystem/register">Register New User</a></td></tr>
+	<tr><td><a href="#">Professor-Manage Existing Assessment(open/close/delete)</a></td></tr>
+	<tr><td><a href="#">Professor-</a></td></tr>
+	</table>
+
 </body>
+
 </html>

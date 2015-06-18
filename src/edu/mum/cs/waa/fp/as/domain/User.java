@@ -1,21 +1,25 @@
 package edu.mum.cs.waa.fp.as.domain;
 
-import java.util.List;
-import java.util.Set;
+ 
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
- 
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
  
-
+/**
+ * 
+ * @author Michael
+ * User class holds entity info to be persisted in database
+ */
 @Entity(name = "User")
 public class User {
+	 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "UserId")
@@ -45,6 +49,7 @@ public class User {
 	 * inverseJoinColumns={ @JoinColumn(name="RoleId" ) } ) private Set<Role>
 	 * roles;
 	 */
+	@Column(name = "Role", nullable = false, unique = false)
 	private String role;
 
 	public String getRole() {
@@ -62,7 +67,7 @@ public class User {
 	public void setVerifyPassword(String verifyPassword) {
 		this.verifyPassword = verifyPassword;
 	}
-
+	@Transient
 	private String verifyPassword;
 
 	public int getUserId() {

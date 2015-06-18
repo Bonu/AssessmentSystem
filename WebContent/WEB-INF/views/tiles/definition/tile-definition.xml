@@ -3,28 +3,39 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	
-	<definition name="baseLayout" template="/WEB-INF/tiles/template/baseLayout.jsp">
+
+	<definition name="baseLayout" template="/WEB-INF/views/tiles/template/baseLayout.jsp">
 		<put-attribute name="title" value="Assessment System" />
-		<put-attribute name="heading" value="" />
-		<put-attribute name="tagline" value="" />
-		<put-attribute name="navigation" value="/WEB-INF/tiles/template/navigation.jsp" />
+		<put-attribute name="heading" value="Assessment System1" />
+		<put-attribute name="tagline" value="AssessmentSystem" />
+		<!-- <put-attribute name="navigation"
+			value="/WEB-INF/views/tiles/template/navigation.jsp" /> -->
 		<put-attribute name="content" value="" />
-		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/template/footer.jsp" />
+	</definition>
+
+	<definition name="assessmentHomepage" extends="baseLayout">
+		<put-attribute name="title" value="Assessment Home" />
+		<put-attribute name="tagline" value="Assessment System" />
+		<put-attribute name="heading" value="Assessment" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/assessmentHomepage.jsp" />
 	</definition>
 	
-	<definition name="login" extends="baseLayout">
-		<put-attribute name="title" value="Login" />
-		<put-attribute name="heading" value="Login" />
-		<put-attribute name="tagline" value="Enter your Credentials" />
-		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+	<definition name="addAssessmentForm" extends="baseLayout">
+		<put-attribute name="title" value="Add Assessment" />
+		<put-attribute name="heading" value="Assessment Module" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/jsp/addAssessmentForm.jsp" />
 	</definition>
-	
-	<definition name="register" extends="baseLayout">
-		<put-attribute name="title" value="Login" />
-		<put-attribute name="heading" value="Login" />
-		<put-attribute name="tagline" value="Register User" />
-		<put-attribute name="content" value="/WEB-INF/views/register.jsp" />
-	</definition>
-	
+
+	<!-- <definition name="login" extends="baseLayout"> <put-attribute name="title" 
+		value="Login" /> <put-attribute name="heading" value="Login" /> <put-attribute 
+		name="tagline" value="Enter your Credentials" /> <put-attribute name="content" 
+		value="/WEB-INF/views/login.jsp" /> </definition> <definition name="register" 
+		extends="baseLayout"> <put-attribute name="title" value="Login" /> <put-attribute 
+		name="heading" value="Login" /> <put-attribute name="tagline" value="Register 
+		User" /> <put-attribute name="content" value="/WEB-INF/views/register.jsp" 
+		/> </definition> -->
+
 </tiles-definitions>

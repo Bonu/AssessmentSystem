@@ -1,9 +1,12 @@
 package edu.mum.cs.waa.fp.as.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,11 +25,44 @@ public class Question {
 	@Column(name = "DESCRIPTION")
 	private String description;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name="QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )
 	private List<Answer> answers;
+
+	/**
+	 * @return the answers
+	 */
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+	
+	/**
+	 * @param answers the answers to set
+	 */
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+	
+	
+	public enum QuestionType{
+		MultipleChoice, TrueFalse, MultipleSelect
+	}
+
+	/**
+	 * @return the questionType
+	 */
+	public QuestionType getQuestionType() {
+		return questionType;
+	}
+
+	/**
+	 * @param questionType the questionType to set
+	 */
+	public void setQuestionType(QuestionType questionType) {
+		this.questionType = questionType;
+	}
 
 	/**
 	 * @return the questionId
@@ -43,13 +79,6 @@ public class Question {
 	}
 
 	/**
-	 * @return the answers
-	 */
-	public List<Answer> getAnswers() {
-		return answers;
-	}
-
-	/**
 	 * @param questionId the questionId to set
 	 */
 	public void setQuestionId(int questionId) {
@@ -62,13 +91,5 @@ public class Question {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	/**
-	 * @param answers the answers to set
-	 */
-	public void setAnswers(List<Answer> answers) {
-		this.answers = answers;
-	}
-	
 	
 }
