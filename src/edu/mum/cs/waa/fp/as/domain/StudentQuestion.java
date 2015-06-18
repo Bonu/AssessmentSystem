@@ -1,5 +1,6 @@
 package edu.mum.cs.waa.fp.as.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,9 +14,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
+/**
+ * The StudentQuestion is stored in TakeAssessment object.
+ * It holds the question answered by the student.
+ * 
+ * @see TakeAssessment
+ * 
+ * @author janardhanbonu
+ *
+ */
 @Entity(name = "STUDENT_QUESTION")
-public class StudentQuestion {
+public class StudentQuestion implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4525276069664717397L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "QUESTIONID")
@@ -79,6 +94,48 @@ public class StudentQuestion {
 	public void setAnswers(List<StudentAnswer> answers) {
 		this.answers = answers;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((answers == null) ? 0 : answers.hashCode());
+		result = prime * result
+				+ ((description == null) ? 0 : description.hashCode());
+		result = prime * result + questionId;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StudentQuestion other = (StudentQuestion) obj;
+		if (answers == null) {
+			if (other.answers != null)
+				return false;
+		} else if (!answers.equals(other.answers))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (questionId != other.questionId)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentQuestion [questionId=" + questionId + ", description="
+				+ description + ", answers=" + answers + "]";
+	}
+	
 	
 	
 }

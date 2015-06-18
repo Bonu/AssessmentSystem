@@ -28,8 +28,7 @@ public class Question {
 	@Column(name = "QUESTIONTYPE")
 	private QuestionType questionType;
 
-@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name="QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )

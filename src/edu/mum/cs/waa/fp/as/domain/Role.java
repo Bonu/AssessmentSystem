@@ -1,5 +1,7 @@
 package edu.mum.cs.waa.fp.as.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
  
@@ -8,7 +10,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity(name = "Role")
-public class Role {
+public class Role  implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1260905927856994839L;
 	@Id
 	@Column(name = "RoleID")
 	private int roleId;
