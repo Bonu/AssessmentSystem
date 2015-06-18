@@ -23,7 +23,7 @@
 			<tr>
 				<td><c:out value="${assessment.nameAssessment}"/></td>
 				<td><c:out value="${assessment.descriptionAssessment}"/></td>
-				<td><c:out value="${assessment.date}"/></td>
+				<td><c:out value="${assessment.dateAssessment}"/></td>
 				<td><a href="<spring:url value="/takeAssessment/${username}/${assessment.id}"/>">Take Assessment</a></td>
 			</tr>
 			</c:forEach>
