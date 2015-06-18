@@ -8,8 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
 <title>Take Assessment</title>
 </head>
 <body>
@@ -20,10 +19,10 @@
 			<legend>Take Assessment</legend>
 
 			<div class="form-group">
-				<label class="control-label col-lg-2 col-lg-2" for="nameAssessment">
+				<label  for="nameAssessment">
 					Assessment Name: </label> <c:out value="${takeAssessment.assessmentName}"></c:out>
 				<div class="col-lg-10">
-				<label class="control-label col-lg-2 col-lg-2" for="nameAssessment">
+				<label  for="nameAssessment">
 				Student Name </label>
 					<c:out value="${takeAssessment.studentName}"></c:out>
 				</div>
@@ -54,7 +53,7 @@
 			</table>
 
 			<div align="right">
-				<input type="submit" id="btnAdd" class="btn btn-primary" value="Submit" />
+				<input type="submit" id="btnAdd" value="Submit" />
 			</div>
 
 		</fieldset>
