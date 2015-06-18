@@ -29,15 +29,8 @@
 	
 	<H2>Welcome to the Assessment Management System</H2>
 	
-	
-	<!-- Show assessments with result + assessments open -> show assess -->
 	<table>
-	<tr><td>
-	<div class="pull-left" style="padding-right: 50px">
-		<a href="<spring:url value="/login"/>">Home</a>
-		
-	</div>
-	</td></tr>
+	
 	<tr><td>
 	<div class="pull-right" style="padding-right: 50px">
 		
@@ -52,23 +45,20 @@
 		</security:authorize>
 	</div>
 	</td></tr>
-	<tr><td><a href="#">Student-Assessment</a></td></tr>
 	<tr><td><a href="/AssessmentSystem/showAssessments">Student show Assessments</a></td></tr>
-	<tr><td><a href="/AssessmentSystem/register">Register New User</a></td></tr>
-	<tr><td><a href="#">Professor-Manage Existing Assessment(open/close/delete)</a></td></tr>
 	<tr><td><a href="createAssessment/">Create Assessment</a></td></tr>
 	<tr><td><a href="QuestionAnswer/createQuestion/1">Create Question</a></td></tr>
-	<tr><td><a href="#">Professor-</a></td></tr>
 	</table>
 	
-	<!--Edited by @Bharat Thapa-->
-	  <%-- <div>
+	<!--Edited by @Bharat-->
+	<%-- Tiles
+	 <div>
 		 <ul>	
 		 	<li>
 				<tiles:insertAttribute name="navigation" />
 			</li>
 		 </ul>
-	</div>  --%>
+	</div> --%>
 
 </body>
 </html>

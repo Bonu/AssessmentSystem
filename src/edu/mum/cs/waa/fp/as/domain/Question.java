@@ -41,13 +41,6 @@ public class Question {
 		return answers;
 	}
 	
-	/**
-	 * @param answers the answers to set
-	 */
-	public void setAnswers(List<Answer> answers) {
-		this.answers = answers;
-	}
-	
 	
 	public enum QuestionType{
 		MultipleChoice, TrueFalse, MultipleSelect
@@ -93,6 +86,10 @@ public class Question {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public void addAnswer(Answer answer) {
+		answers.add(answer);		
 	}
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import edu.mum.cs.waa.fp.as.domain.Assessment;
+import edu.mum.cs.waa.fp.as.domain.Question;
 
 
 public interface AssessmentService {
@@ -22,6 +23,8 @@ public interface AssessmentService {
 	public Assessment findById(Long id);
 	
 	public Assessment findByIdWithQuestion(Long id);
+
+	public Question addQuestion(Long assessmentId, Question question);
 
 	
 }
