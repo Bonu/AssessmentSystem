@@ -1,0 +1,7 @@
+edu.mum.cs.waa.fp.as.controller
+edu.mum.cs.waa.fp.as.domain
+edu.mum.cs.waa.fp.as.repository
+edu.mum.cs.waa.fp.as.repository.impl
+edu.mum.cs.waa.fp.as.service
+edu.mum.cs.waa.fp.as.service.impl
+edu.mum.cs.waa.fp.as.validator
