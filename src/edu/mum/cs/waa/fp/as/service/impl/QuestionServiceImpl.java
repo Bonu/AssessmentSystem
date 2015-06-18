@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.mum.cs.waa.fp.as.domain.Answer;
 import edu.mum.cs.waa.fp.as.domain.Question;
 import edu.mum.cs.waa.fp.as.repository.QuestionRepository;
 import edu.mum.cs.waa.fp.as.service.QuestionService;
@@ -33,6 +34,13 @@ public class QuestionServiceImpl implements QuestionService {
 	public void delete(int id) {
 		// TODO Auto-generated method stub
 		questionRepository.delete(id);
+	}
+
+	@Override
+	public Answer addAnswer(int questionId, Answer answer) {
+		Question question = questionRepository.findOne(questionId);
+		question.addAnswer(answer);
+		return null;
 	}
 
 }
