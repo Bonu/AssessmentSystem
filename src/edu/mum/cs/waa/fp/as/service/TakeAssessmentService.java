@@ -1,5 +1,7 @@
 package edu.mum.cs.waa.fp.as.service;
 
+import java.util.List;
+
 import edu.mum.cs.waa.fp.as.domain.TakeAssessment;
 
 /**
@@ -12,4 +14,9 @@ import edu.mum.cs.waa.fp.as.domain.TakeAssessment;
 public interface TakeAssessmentService {
 
 	public void saveTakeAssessment(TakeAssessment takeAssessment);
+	
+	public TakeAssessment getTakeAssessment(int takeAssessmentId);
+	
+	public List<TakeAssessment> getTakeAssessments();
+	
 }
