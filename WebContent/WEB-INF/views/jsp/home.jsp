@@ -34,8 +34,6 @@
 		<spring:message code="home.hello.lable" />
 	</div>
 	<H2>Welcome to the Assessment Management System</H2>
-	<spring:message code="home.hello.lable"/>
-	<!-- Show assessments with result + assessments open -> show assess -->
 	<table>
 	<tr><td><a href="#">Student-Assessment</a></td></tr>
 	<tr><td><a href="/AssessmentSystem/showAssessments">Student show Assessments</a></td></tr>
@@ -43,7 +41,6 @@
 	<tr><td><a href="#">Professor-Manage Existing Assessment(open/close/delete)</a></td></tr>
 	<tr><td><a href="#">Professor-</a></td></tr>
 	</table>
-
 </body>
 
 </html>

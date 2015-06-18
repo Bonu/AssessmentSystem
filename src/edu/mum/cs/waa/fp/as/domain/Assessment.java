@@ -50,9 +50,6 @@ public class Assessment implements Serializable {
 			joinColumns={@JoinColumn(name="ASSESSMENTID")},
 	inverseJoinColumns={@JoinColumn(name="QUESTIONID", unique=true)})
 	public List<Question> question = new ArrayList<Question>();
-	
-	
-	
 	public Date getDateAssessment() {
 		return dateAssessment;
 	}

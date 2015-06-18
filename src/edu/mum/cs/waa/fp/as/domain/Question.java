@@ -24,12 +24,16 @@ public class Question {
 	
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
+	@Column(name = "QUESTIONTYPE")
+	private QuestionType questionType;
+
+@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
 	@JoinTable(name="QUESTION_ANSWER",
 	joinColumns={ @JoinColumn(name="QUESTIONID")},
 	inverseJoinColumns={ @JoinColumn(name="ANSWERID" ) } )
-	private List<Answer> answers;
+	private List<Answer> answers = new ArrayList<Answer>();
 
 	/**
 	 * @return the answers
